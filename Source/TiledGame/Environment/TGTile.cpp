@@ -46,7 +46,7 @@ void ATGTile::TriggerEnter(class UPrimitiveComponent* HitComp, class AActor* Oth
 	ATGPlayerPointer* PlayerPointer = Cast<ATGPlayerPointer>(OtherActor);
 	if (PlayerPointer)
 	{
-		PlayerPointer->CurrentTile = this;
+		PlayerPointer->UpdateCurrentTile(this);
 	}
 }
 

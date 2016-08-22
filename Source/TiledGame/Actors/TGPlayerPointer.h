@@ -42,7 +42,12 @@ public:
 		bool bUseSnappingMovement = false;
 
 	UPROPERTY(EditAnywhere)
+		class ATGTile* LastTile;
+
+	UPROPERTY(EditAnywhere)
 		class ATGTile* CurrentTile;
+
+	void UpdateCurrentTile(class ATGTile* Tile);
 
 	void MoveRight(float Val);
 
@@ -57,4 +62,6 @@ public:
 	void SnapRight();
 
 	void ResetToGrid();
+
+	void OnSelectAction();
 };

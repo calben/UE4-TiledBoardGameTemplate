@@ -107,6 +107,18 @@ void ATGPlayerPointer::ResetToGrid()
 	this->Mesh->SetPhysicsLinearVelocity(FVector::ZeroVector);
 }
 
+void ATGPlayerPointer::OnSelectAction()
+{
+
+}
+
+
+void ATGPlayerPointer::UpdateCurrentTile(class ATGTile* Tile)
+{
+	this->LastTile = this->CurrentTile;
+	this->CurrentTile = Tile;
+}
+
 // Called to bind functionality to input
 void ATGPlayerPointer::SetupPlayerInputComponent(class UInputComponent* InputComponent)
 {
@@ -117,5 +129,5 @@ void ATGPlayerPointer::SetupPlayerInputComponent(class UInputComponent* InputCom
 	InputComponent->BindAction("SnapBackward", IE_Pressed, this, &ATGPlayerPointer::SnapBackward);
 	InputComponent->BindAction("SnapLeft", IE_Pressed, this, &ATGPlayerPointer::SnapLeft);
 	InputComponent->BindAction("SnapRight", IE_Pressed, this, &ATGPlayerPointer::SnapRight);
+	InputComponent->BindAction("Select", IE_Pressed, this, &ATGPlayerPointer::OnSelectAction);
 }
-

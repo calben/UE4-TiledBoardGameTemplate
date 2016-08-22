@@ -3,7 +3,6 @@
 #pragma once
 
 #include "GameFramework/Pawn.h"
-#include "Environment/TGTile.h"
 #include "TGPlayerPointer.generated.h"
 
 UCLASS()
@@ -43,7 +42,7 @@ public:
 		bool bUseSnappingMovement = false;
 
 	UPROPERTY(EditAnywhere)
-		ATGTile* CurrentTile;
+		class ATGTile* CurrentTile;
 
 	void MoveRight(float Val);
 

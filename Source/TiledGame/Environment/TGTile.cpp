@@ -21,10 +21,10 @@ ATGTile::ATGTile()
 	this->SetActorScale3D(FVector::FVector(0.95f, 0.95f, 0.1f));
 
 	Collision = CreateDefaultSubobject<UBoxComponent>(TEXT("Collision"));
-	Collision->SetCollisionEnabled(ECollisionEnabled::QueryOnly);
-	Collision->SetCollisionProfileName(UCollisionProfile::Pawn_ProfileName);
 	Collision->SetBoxExtent(FVector::FVector(50.f, 50.f, 300.f));
 	Collision->SetRelativeLocation(FVector::FVector(0.f, 0.f, 300.f));
+	Collision->OnComponentBeginOverlap.AddDynamic(this, &ATGTile::TriggerEnter);
+	Collision->OnComponentEndOverlap.AddDynamic(this, &ATGTile::TriggerExit);
 	Collision->SetupAttachment(Mesh);
 }
 
@@ -41,4 +41,17 @@ void ATGTile::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 }
 
+void ATGTile::TriggerEnter(class UPrimitiveComponent* HitComp, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult & SweepResult)
+{
+	ATGPlayerPointer* PlayerPointer = Cast<ATGPlayerPointer>(OtherActor);
+	if (PlayerPointer)
+	{
+		PlayerPointer->CurrentTile = this;
+	}
+}
 
+UFUNCTION()
+void ATGTile::TriggerExit(class UPrimitiveComponent* HitComp, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
+{
+
+}

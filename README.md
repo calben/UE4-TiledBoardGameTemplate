@@ -5,6 +5,6 @@ This template requires Unreal Engine 4.12 or higher.
 
 ## Current Look
 
-![Screenshot of the Current Edition](https://raw.githubusercontent.com/calben/UE4-TiledBoardGameTemplate/master/doc/preview.png)
+![Screenshot of the Current Edition](https://github.com/calben/UE4-TiledBoardGameTemplate/raw/master/Doc/preview.png)
 
-![Gif of the Current Edition](https://raw.githubusercontent.com/calben/UE4-TiledBoardGameTemplate/master/doc/playericondemo.gif)
+![Gif of the Current Edition](https://github.com/calben/UE4-TiledBoardGameTemplate/raw/master/Doc/playericondemo.gif)

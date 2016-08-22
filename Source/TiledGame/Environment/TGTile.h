@@ -22,5 +22,15 @@ public:
 
 	UPROPERTY(EditAnywhere)
 		UStaticMeshComponent* Mesh;
+
+	UPROPERTY(EditAnywhere)
+		UBoxComponent* Collision;
+
+	UFUNCTION()
+		void OnOverlapBegin(class UPrimitiveComponent* OverlappedComp, class AActor* OtherActor);
+
+	UFUNCTION()
+		void OnOverlapEnd(class UPrimitiveComponent* OverlappedComp, class AActor* OtherActor);
+
 	
 };

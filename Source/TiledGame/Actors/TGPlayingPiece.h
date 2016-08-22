@@ -3,17 +3,16 @@
 #pragma once
 
 #include "GameFramework/Actor.h"
-#include "Environment/TGTile.h"
-#include "TGBoard.generated.h"
+#include "TGPlayingPiece.generated.h"
 
 UCLASS()
-class TILEDGAME_API ATGBoard : public AActor
+class TILEDGAME_API ATGPlayingPiece : public AActor
 {
 	GENERATED_BODY()
 	
 public:	
 	// Sets default values for this actor's properties
-	ATGBoard();
+	ATGPlayingPiece();
 
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
@@ -23,16 +22,5 @@ public:
 
 	UPROPERTY(EditAnywhere)
 		UStaticMeshComponent* Mesh;
-
-	UPROPERTY(EditAnywhere)
-		TArray<ATGTile*> Tiles;
-
-	UPROPERTY(EditAnywhere)
-		UMaterial* TileMaterialA;
-
-	UPROPERTY(EditAnywhere)
-		UMaterial* TileMaterialB;
-
-	void SpawnBoardTiles();
-
+		
 };

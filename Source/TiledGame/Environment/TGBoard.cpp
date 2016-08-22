@@ -26,7 +26,18 @@ ATGBoard::ATGBoard()
 void ATGBoard::BeginPlay()
 {
 	Super::BeginPlay();
+	SpawnBoardTiles();
+}
 
+// Called every frame
+void ATGBoard::Tick( float DeltaTime )
+{
+	Super::Tick( DeltaTime );
+
+}
+
+void ATGBoard::SpawnBoardTiles()
+{
 	for (auto i = 0; i < this->GetActorScale3D().X; ++i)
 	{
 		for (auto j = 0; j < this->GetActorScale3D().Y; ++j)
@@ -45,12 +56,5 @@ void ATGBoard::BeginPlay()
 			}
 		}
 	}
-}
-
-// Called every frame
-void ATGBoard::Tick( float DeltaTime )
-{
-	Super::Tick( DeltaTime );
-
 }
 

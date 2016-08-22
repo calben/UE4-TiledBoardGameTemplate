@@ -3,6 +3,8 @@
 #include "TiledGame.h"
 #include "TiledGameGameMode.h"
 
-
-
+ATiledGameGameMode::ATiledGameGameMode()
+{
+	DefaultPawnClass = ATGPlayerPointer::StaticClass();
+}
 

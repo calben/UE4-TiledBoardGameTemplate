@@ -6,3 +6,6 @@ This template requires Unreal Engine 4.12 or higher.
 ## Current Look
 
 ![Screenshot of the Current Edition](https://github.com/calben/UE4-TiledBoardGameTemplate/raw/master/Doc/preview.png)
+
+
+![Screenshot of the Current Edition Checkers](https://github.com/calben/UE4-TiledBoardGameTemplate/raw/master/Doc/checkerspreview.png)

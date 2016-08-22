@@ -32,7 +32,7 @@ ATGPlayerPointer::ATGPlayerPointer()
 	SpringArm->bDoCollisionTest = true;
 	SpringArm->bAbsoluteRotation = true;
 	SpringArm->RelativeRotation = FRotator(-70.f, 0.f, 0.f);
-	SpringArm->TargetArmLength = 600.f;
+	SpringArm->TargetArmLength = 800.f;
 	SpringArm->bEnableCameraLag = true;
 	SpringArm->CameraLagSpeed = 5.0f;
 	SpringArm->CameraLagSpeed = 3.f;
@@ -41,7 +41,7 @@ ATGPlayerPointer::ATGPlayerPointer()
 	Camera->bUsePawnControlRotation = false;
 
 	RotatingMovement = CreateDefaultSubobject<URotatingMovementComponent>(TEXT("RotatingMovement"));
-	RotatingMovement->RotationRate = FRotator::FRotator(0.0f, 30.0f, 0.0f);
+	RotatingMovement->RotationRate = FRotator::FRotator(0.0f, 40.0f, 0.0f);
 
 	RootComponent = Mesh;
 	Light->SetupAttachment(Mesh);

@@ -38,8 +38,20 @@ public:
 	UPROPERTY(EditAnywhere)
 		class URotatingMovementComponent* RotatingMovement;
 
+	UPROPERTY(EditAnywhere)
+		bool bUseSnappingMovement = false;
+
 	void MoveRight(float Val);
 
 	void MoveForward(float Val);
 
+	void SnapForward();
+
+	void SnapBackward();
+
+	void SnapLeft();
+
+	void SnapRight();
+
+	void ResetToGrid();
 };

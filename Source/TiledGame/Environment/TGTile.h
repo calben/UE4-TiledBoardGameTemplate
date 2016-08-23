@@ -27,9 +27,15 @@ public:
 	UPROPERTY(EditAnywhere)
 		UBoxComponent* Collision;
 
+	UPROPERTY(EditAnywhere)
+		bool bSelected = false;
+
 	UFUNCTION()
 		void TriggerEnter(class UPrimitiveComponent* HitComp, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult & SweepResult);
 
 	UFUNCTION()
 		void TriggerExit(class UPrimitiveComponent* HitComp, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
+
+	void Unselect();
+	void Select();
 };

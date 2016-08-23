@@ -26,6 +26,7 @@ ATGTile::ATGTile()
 	Collision->OnComponentBeginOverlap.AddDynamic(this, &ATGTile::TriggerEnter);
 	Collision->OnComponentEndOverlap.AddDynamic(this, &ATGTile::TriggerExit);
 	Collision->SetupAttachment(Mesh);
+
 }
 
 // Called when the game starts or when spawned
@@ -54,4 +55,14 @@ UFUNCTION()
 void ATGTile::TriggerExit(class UPrimitiveComponent* HitComp, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
 {
 
+}
+
+void ATGTile::Unselect()
+{
+	bSelected = false;
+}
+
+void ATGTile::Select()
+{
+	bSelected = true;
 }

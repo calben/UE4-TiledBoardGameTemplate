@@ -42,7 +42,10 @@ public:
 		bool bUseSnappingMovement = false;
 
 	UPROPERTY(EditAnywhere)
-		class ATGTile* LastTile;
+		class ATGTile* LastTileHovered;
+
+	UPROPERTY(EditAnywhere)
+		class ATGTile* LastTileSelected;
 
 	UPROPERTY(EditAnywhere)
 		class ATGTile* CurrentTile;

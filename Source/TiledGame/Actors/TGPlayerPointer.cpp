@@ -1,6 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #include "TiledGame.h"
+#include "Environment/TGTile.h"
 #include "TGPlayerPointer.h"
 
 
@@ -109,13 +110,16 @@ void ATGPlayerPointer::ResetToGrid()
 
 void ATGPlayerPointer::OnSelectAction()
 {
-
+	if(LastTileSelected)
+		this->LastTileSelected->Unselect();
+	this->CurrentTile->Select();
+	this->LastTileSelected = this->CurrentTile;
 }
 
 
 void ATGPlayerPointer::UpdateCurrentTile(class ATGTile* Tile)
 {
-	this->LastTile = this->CurrentTile;
+	this->LastTileHovered = this->CurrentTile;
 	this->CurrentTile = Tile;
 }
 
